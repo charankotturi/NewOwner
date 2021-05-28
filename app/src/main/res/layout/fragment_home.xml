@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:id="@+id/fragmentHome"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context="com.example.olxclone.Fragments.HomeFragment">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        >
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="66dp"
+            android:id="@+id/relative"
+            android:background="#e4f1fe"
+            app:layout_constraintTop_toTopOf="parent"
+            >
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:id="@+id/linearSearchLayout"
+                android:background="@drawable/search_trigger_bac"
+                android:orientation="horizontal"
+                android:layout_toStartOf="@+id/imgNotifications"
+                android:layout_margin="5dp"
+                android:gravity="center_vertical"
+                android:layout_centerVertical="true"
+                >
+                <ImageView
+                    android:layout_width="38dp"
+                    android:layout_height="38dp"
+                    android:src="@drawable/ic_search"
+                    android:paddingStart="10dp"
+                    />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingStart="5dp"
+                    android:singleLine="true"
+                    android:textSize="16sp"
+                    android:text="Find cycles, bikes, books and people too"
+                    android:maxLines="1"
+                    android:ellipsize="end"
+                    />
+
+            </LinearLayout>
+
+            <ImageView
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:id="@+id/imgNotifications"
+                android:src="@drawable/ic_notification"
+                android:layout_alignParentEnd="true"
+                android:padding="10dp"
+                android:layout_centerVertical="true"
+                />
+
+        </RelativeLayout>
+
+        <Button
+            android:id="@+id/btnLogOut"
+            android:text="log-out"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/relative" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recViewMain"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_marginVertical="2dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/relative" />
+
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_margin="15dp"
+            android:id="@+id/btnAddPost"
+            app:fabCustomSize="50dp"
+            android:src="@drawable/ic_baseline_add_24"
+            android:background="@color/black"
+            />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</FrameLayout>
